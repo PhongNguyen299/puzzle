@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JQuery assignment 3</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="puzzles">
+      <img id="img1" onclick="change(img1,pos1)" src="" alt="" />
+      <img id="img2" onclick="change(img2,pos2)" src="" alt="" />
+      <img id="img3" onclick="change(img3,pos3)" src="" alt="" />
+      <img id="img4" onclick="change(img4,pos4)" src="" alt="" />
+      <img id="img5" onclick="change(img5,pos5)" src="" alt="" />
+    </div>
+  </div>
+<script>
+
+  const pos1 = ['http://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part1x1.jpg','http://demo.codegym.vn/8/puzzlegame/img/monkey_part1x1.jpg','http://demo.codegym.vn/8/puzzlegame/img/panda_swap_part1x1.jpg']
+  const pos2 = ['http://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part2x1.jpg','http://demo.codegym.vn/8/puzzlegame/img/monkey_part2x1.jpg','http://demo.codegym.vn/8/puzzlegame/img/panda_swap_part2x1.jpg']
+  const pos3 = ['http://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part3x1.jpg','http://demo.codegym.vn/8/puzzlegame/img/monkey_part3x1.jpg','http://demo.codegym.vn/8/puzzlegame/img/panda_swap_part3x1.jpg']
+  const pos4 = ['http://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part4x1.jpg','http://demo.codegym.vn/8/puzzlegame/img/monkey_part4x1.jpg','http://demo.codegym.vn/8/puzzlegame/img/panda_swap_part4x1.jpg']
+  const pos5 = ['http://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part5x1.jpg','http://demo.codegym.vn/8/puzzlegame/img/monkey_part5x1.jpg','http://demo.codegym.vn/8/puzzlegame/img/panda_swap_part5x1.jpg']
+
+  const init = function (){
+      img1.src = pos1[Math.trunc(Math.random() * 3)];
+      img2.src = pos2[Math.trunc(Math.random() * 3)];
+      img3.src = pos3[Math.trunc(Math.random() * 3)];
+      img4.src = pos4[Math.trunc(Math.random() * 3)];
+      img5.src = pos5[Math.trunc(Math.random() * 3)];
+
+  }
+  init();
+  // function change(){
+  //   if (img1.src == pos1[0]) img1.src = pos1[1];
+  //   else if (img1.src == pos1[1]) img1.src = pos1[2];
+  //   else if (img1.src == pos1[2]) img1.src = pos1[0];
+  // }
+  function change(img,pos){
+    let img1= document.getElementById(img);
+    let img2= document.getElementById(img);
+    let img3= document.getElementById(img);
+    let img4= document.getElementById(img);
+    let img5= document.getElementById(img);
+
+    if (img.src == pos[0]) img.src = pos[1];
+    else if (img.src == pos[1]) img.src = pos[2];
+    else if (img.src == pos[2]) img.src = pos[0];
+  }
+</script>
+</body>
+</html>
